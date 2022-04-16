@@ -1,1 +1,1 @@
-# chainlink-brownie-mix
+# chainlink-hardhat-mix
