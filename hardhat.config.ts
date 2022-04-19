@@ -1,3 +1,5 @@
+import * as dotenv from "dotenv";
+
 import "hardhat-deploy";
 import "@nomiclabs/hardhat-etherscan";
 import "@nomiclabs/hardhat-ethers";
@@ -5,6 +7,9 @@ import "@typechain/hardhat";
 import "hardhat-gas-reporter";
 import { HardhatUserConfig } from "hardhat/types";
 import { RpcUrl, Explorer, NetworkConfigMap } from "./models/models";
+import "./tasks";
+
+dotenv.config();
 
 /**
  * @type import('hardhat/config').HardhatUserConfig
@@ -13,7 +18,7 @@ import { RpcUrl, Explorer, NetworkConfigMap } from "./models/models";
 const RPC_URL: RpcUrl = {
     mainnet: process.env.MAINNET_RPC_URL || "",
     rinkeby: process.env.RINKEBY_RPC_URL || "",
-    kovan: process.env.KOVAN_RPC_URL || "",
+    kovan: String(process.env.KOVAN_RPC_URL) || "",
     polygon: process.env.POLYGON_RPC_URL || "",
 };
 

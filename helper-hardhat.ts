@@ -3,7 +3,7 @@ import { networkConfig } from "./hardhat.config";
 import { BlockchainEnvironments } from "./models/models";
 
 export const CHAINS: BlockchainEnvironments = {
-    local: ["hardhat", "localhost"],
+    local: ["hardhat", "localhost", "local"],
     test: ["rinkeby", "kovan", "mumbai"],
     main: ["mainnet", "polygon"],
 };
