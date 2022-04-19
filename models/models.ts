@@ -1,3 +1,5 @@
+import { BigNumber } from "ethers";
+
 /* ./hardhat.config.ts */
 
 export type RpcUrl = {
@@ -13,7 +15,17 @@ export type Explorer = {
 };
 
 export type NetworkConfigItem = {
+    name: string;
     chainId: number;
+    /* chainlink */
+    fundAmount?: BigNumber;
+    keyHash?: string;
+    linkTokenAddr?: string;
+    keepersUpdateIntervalInMin?: string;
+    /* chainlink APIConsumer */
+    oracleAddr?: string;
+
+    linkFee?: string;
     verify: boolean;
 };
 

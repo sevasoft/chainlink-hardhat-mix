@@ -110,26 +110,32 @@ const config: HardhatUserConfig = {
 
 export const networkConfig: NetworkConfigMap = {
     hardhat: {
+        name: "hardhat",
         chainId: 31337,
         verify: false,
     },
     localhost: {
+        name: "localhost",
         chainId: 31337,
         verify: false,
     },
     mainnet: {
+        name: "mainnet",
         chainId: 1,
         verify: false,
     },
     rinkeby: {
+        name: "rinkeby",
         chainId: 4,
         verify: false,
     },
     kovan: {
+        name: "kovan",
         chainId: 42,
         verify: false,
     },
     polygon: {
+        name: "polygon",
         chainId: 137,
         verify: false,
     },

@@ -6,7 +6,7 @@ import {
     verify,
 } from "../helper-hardhat";
 
-const deployPriceConsumerV3: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
+const deployAPIConsumer: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
     // @ts-ignore
     const { getNamedAccounts, deployments } = hre;
     const { deploy } = deployments;
@@ -14,7 +14,7 @@ const deployPriceConsumerV3: DeployFunction = async function (hre: HardhatRuntim
 
     const constructorArgs: any[] = [];
 
-    const priceConsumerV3 = await deploy("PriceConsumerV3", {
+    const apiConsumer = await deploy("APIConsumer", {
         from: deployer,
         args: constructorArgs,
         log: true,
@@ -22,8 +22,8 @@ const deployPriceConsumerV3: DeployFunction = async function (hre: HardhatRuntim
     });
 
     if (await isVerifiableContract()) {
-        await verify(priceConsumerV3.address, constructorArgs);
+        await verify(apiConsumer.address, constructorArgs);
     }
 };
 
-export default deployPriceConsumerV3;
+export default deployAPIConsumer;
